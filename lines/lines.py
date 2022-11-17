@@ -39,14 +39,14 @@ def plotlines(xlimmin, xlimmax, ymax):
     for k in range(len(ems_lines[0])):
         if ems_lines[0][k] >= xlimmin:
             if c == 2.5: c = 1
-            plt.axvline(x=ems_lines[0][k], color='gray', linestyle='--')
-            plt.text(ems_lines[0][k], ymax-0.1*c*ymax, ems_lines[1][k], color='red')#, backgroundcolor='white')
+            plt.axvline(x=ems_lines[0][k], color='gray', linestyle=':')
+            plt.text(ems_lines[0][k], ymax-0.1*c*ymax, ems_lines[1][k], color='red')#, rotation='vertical')#, backgroundcolor='white')
             c += 0.5
-    c = 3
+    c = 3.5
     for j in range(len(abs_lines[0])):
         if xlimmin <= abs_lines[0][j] <= xlimmax:
-            if c == 6: c = 3
-            plt.axvline(x=abs_lines[0][j], color='gray', linestyle='--')
-            plt.text(abs_lines[0][j], ymax-0.1*c*ymax, ems_lines[1][j], color='blue')#, backgroundcolor='white')
+            if c == 6.5: c = 3.5
+            plt.axvline(x=abs_lines[0][j], color='gray', linestyle=':')
+            plt.text(abs_lines[0][j], ymax-0.1*c*ymax, ems_lines[1][j], color='blue')#, rotation='vertical')#, backgroundcolor='white')
             c += 0.5
     return
