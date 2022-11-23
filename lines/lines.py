@@ -37,7 +37,7 @@ def plotlines(xlimmin, xlimmax, ymax):
     abs_lines = absorption()
     c = 0.5
     for k in range(len(ems_lines[0])):
-        if ems_lines[0][k] >= xlimmin:
+        if xlimmin <= ems_lines[0][k] <= xlimmax:
             if c == 2.5: c = 0.5
             plt.axvline(x=ems_lines[0][k], color='gray', linestyle=':')
             plt.text(ems_lines[0][k], ymax-0.15*c*ymax, ems_lines[1][k], color='red')#, rotation='vertical')#, backgroundcolor='white')
