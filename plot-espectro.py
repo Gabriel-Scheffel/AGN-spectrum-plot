@@ -23,16 +23,23 @@ with fits.open('spec-1018-52672-0359.fits') as hdul:
     # specobj = hdul[2].data
     coadd = hdul[1].data
 
-flux = []
-wlen = []
+fluxa = []
+fluxb = []
+wlena = []
+wlenb = []
 em_lines = []
 for i in range(len(coadd)):
-    flux.append(coadd[i][0]*1e-17)
-    wlen.append((10**coadd[i][1])/(z+1))
+    if i <= int(len(coadd)/2):
+        fluxa.append(coadd[i][0]*1e-17)
+        wlena.append((10**coadd[i][1])/(z+1))
+    else:
+        fluxb.append(coadd[i][0] * 1e-17)
+        wlenb.append((10 ** coadd[i][1]) / (z + 1))
 
 plt.figure(figsize=(12,4))
 lines.plotlines(3.5e3, 9e3, 2.5e-14)
-plt.plot(wlen, flux, 'black')
+plt.plot(wlena, fluxa, 'black')
+#plt.xlim(6.5e3)
 '''
 A função plotlines recebe três valores:
 - um limite mínimo e um máximo para o x;
