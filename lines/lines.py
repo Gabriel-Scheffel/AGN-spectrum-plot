@@ -47,6 +47,6 @@ def plotlines(xlimmin, xlimmax, ymax):
         if xlimmin <= abs_lines[0][j] <= xlimmax:
             if c == 5.5: c = 3.5
             plt.axvline(x=abs_lines[0][j], color='gray', linestyle=':')
-            plt.text(abs_lines[0][j], ymax-0.1*c*ymax, ems_lines[1][j], color='blue')#, rotation='vertical')#, backgroundcolor='white')
+            plt.text(abs_lines[0][j], ymax-0.1*c*ymax, abs_lines[1][j], color='blue')#, rotation='vertical')#, backgroundcolor='white')
             c += 0.5
     return
